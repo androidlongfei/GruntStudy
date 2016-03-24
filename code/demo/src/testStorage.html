@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>storage存取或者获取值</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="storage.js"></script>
+</head>
+<body>
+<div>
+    <p>storage 存取（包括字符串,对象,数组）</p>
+
+    <p id='txt'> 123</p>
+</div>
+
+<div>
+    <p>storage 存取（包括字符串,布尔值）</p>
+
+    <p id='sex'> true</p>
+</div>
+</body>
+</html>
+
+<script>
+
+    $(function () {
+
+        testStoreObj();
+        testStoreBoolean();
+
+        function testStoreObj() {
+            var txtValue = window.sessionStorage.get('txt');
+            if (txtValue) {
+                if (typeof txtValue == 'string') {
+                    console.log(txtValue);
+                    $("#txt").text(txtValue);
+                } else if (typeof txtValue == 'object') {
+                    if (txtValue instanceof Array) {
+                        console.log(txtValue + " 是数组", txtValue);
+                        $("#txt").text(txtValue[0]);
+                    } else {
+                        console.log(txtValue + " 是对象", txtValue);
+                        $("#txt").text(txtValue.age);
+                    }
+
+                }
+                window.sessionStorage.clear();
+            } else {
+                var txt = {
+                    name: '张三',
+                    age: 100
+                }
+
+                //txt = "100";
+                txt = [100, 200];
+                window.sessionStorage.put('txt', txt);
+            }
+        }
+
+        function testStoreBoolean() {
+            var sexValue = window.sessionStorage.get('sex');
+            if (sexValue) {
+                $("#txt").text(sexValue);
+                if (sexValue == 'true') {
+                    console.log('字符串true:', sexValue);
+                } else if (sexValue == 'false') {
+                    console.log('字符串false:', sexValue);
+                } else {
+                    console.log('真值true:', sexValue);
+                }
+                window.sessionStorage.clear();
+            } else {
+                if (sexValue != null && !sexValue) {
+                    console.log('真值false:', sexValue);
+                }
+                window.sessionStorage.put('sex', 'true');
+                //window.sessionStorage.put('sex',true);
+                //window.sessionStorage.put('sex',false);
+                //window.sessionStorage.put('sex','false');
+            }
+        }
+    });
+
+</script>

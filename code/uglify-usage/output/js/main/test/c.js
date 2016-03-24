@@ -1,0 +1,2 @@
+/*! grunt-uglify-test 2016-03-24 */
+function test(a){console.log(a)}function parameter(){function a(a){a.age+=200,a.name[0]="123"}var b={age:100,name:[1,2,3]};console.log("ago add",b),a(b),console.log("after add",b)}var name="uglify usage";test(name),parameter();

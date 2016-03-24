@@ -1,0 +1,25 @@
+### Example user template template
+### Example user template
+
+# node_moduels
+node_modules/
+
+# dist
+dist/
+out/
+
+output/
+
+# tmp
+.tmp/
+
+npm-debug.log
+Frontend/app/partials.js
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+.DS_Store
+# Created by .ignore support plugin (hsz.mobi)

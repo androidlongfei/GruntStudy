@@ -1,0 +1,73 @@
+一、grunt-cli插件
+
+“CLI”被翻译为“命令行”。要想使用grunt，首先必须将grunt-cli安装到全局环境中
+
+1.全局安装grunt-cli插件
+sudo npm install -g grunt-cli
+
+2.在终端运行 grunt
+
+3.查看提示
+
+ 二、安装grunt
+
+一系列插件都是基于grunt的，因此才能把grunt叫做一个“构建工具”。
+Grunt没有具体的作用，但是它能把有具体作用的一个一个插件组合起来，形成一个整体效应。
+
+1.本地安装grunt
+sudo npm install grunt --save-dev
+
+备注：（“—save-dev”的意思是，在当前目录安装grunt的同时，顺便把grunt保存为这个目录的开发依赖项。）
+
+2.在项目根目录新建Gruntfile.js文件，
+
+3.然后在终端运行 grunt ,
+
+会提示Task “default” not found
+
+三、配置Gruntfile.js
+
+1.如下
+module.exports = function(grunt){
+
+    //任务配置，所有插件的配置信息
+    grunt.initConfig({
+
+        //获取 package.json的信息
+        pkg:grunt.file.readJSON('package.json')
+
+    });
+
+    //告诉grunt当我们在终端输入grunt时需要做什么，注意先后顺序
+    grunt.registerTask('default',[]);
+}
+
+2. 在终端运行: grunt
+
+3.查看结果信息为:Done,without errors.
+
+四.grunt插件介绍
+
+1.插件分为两类。第一类是grunt团队贡献的插件，这些插件的名字前面都带有“contrib-”前缀，而且在插件列表中有星号标注。
+第二类是第三方提供的插件，不带有这两个特征。
+
+2.排名靠前的插件列举
+
+    Contrib-jshint——javascript语法错误检查；
+
+    Contrib-watch——实时监控文件变化、调用相应的任务重新执行；
+
+    Contrib-clean——清空文件、文件夹；
+
+    Contrib-uglify——压缩javascript代码
+
+    Contrib-copy——复制文件、文件夹
+
+    Contrib-concat——合并多个文件的代码到一个文件中
+
+    karma——前端自动化测试工具
+
+五、Contrib-uglify插件的使用(压缩javascript代码).
+
+1.安装
+npm install grunt-contrib-uglify --save-dev
