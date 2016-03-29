@@ -13,7 +13,7 @@ var name = "uglify usage";
  * @param param
  */
 function test(param){
-    console.log(param);
+    console.log(param)
 }
 
 test(name);
@@ -27,7 +27,7 @@ function parameter(){
         name:[1,2,3]
     };
 
-    console.log('ago add',data);
+    console.log('ago add',data)
 
     function addData(data){
         data.age += 200;
@@ -36,7 +36,7 @@ function parameter(){
 
     addData(data);
 
-    console.log('after add',data);
+    console.log('after add',data)
 
 }
 

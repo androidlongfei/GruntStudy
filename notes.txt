@@ -71,3 +71,28 @@ module.exports = function(grunt){
 
 1.安装
 npm install grunt-contrib-uglify --save-dev
+
+六、Contrib-jshint——javascript语法错误检查；
+
+1.安装
+npm install grunt-contrib-jshint --save-dev
+
+七、grunt-contrib-clean（清空文件和目录）
+1.安装
+npm install grunt-contrib-clean --save-dev
+
+八、grunt-contrib-clean（拷贝文件和目录）
+1.安装
+npm install grunt-contrib-copy --save-dev
+
+九、grunt-rev 和 grunt-usemin （替换静态资源, 包括html,css）
+1.安装
+npm install grunt-rev --save-dev
+npm install grunt-usemin --save-dev
+
+十、js-obfuscator（二进制混淆）
+1.安装
+npm install js-obfuscator --save-dev
+
+
+
