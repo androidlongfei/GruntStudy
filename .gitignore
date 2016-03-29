@@ -17,7 +17,7 @@ npm-debug.log
 Frontend/app/partials.js
 
 # IntelliJ project files
-.idea
+.idea/
 *.iml
 out
 gen
